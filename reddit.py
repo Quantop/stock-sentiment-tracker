@@ -1,4 +1,5 @@
 import praw
+from praw.models import MoreComments
 import configparser
 import pandas as pd
 
@@ -19,9 +20,23 @@ reddit = praw.Reddit(
 )
 
 posts = []
+postids = []
+comments = []
 
 for currentsub in subreddits:
     for post in reddit.subreddit(currentsub).hot(limit=10):
         posts.append([post.title, post.score, post.id, post.subreddit, post.url, post.num_comments, post.selftext, post.created])
+        postids.append(post.id)
 
 posts = pd.DataFrame(posts,columns=['title', 'score', 'id', 'subreddit', 'url', 'num_comments', 'body', 'created'])
+
+for id in postids:
+    submission = reddit.submission(id)
+
+    # No replies yet, just comments
+    for comment in submission.comments:
+        if isinstance(comment, MoreComments):
+            continue
+        comments.append([id, submission.title, comment.body])
+
+comments = pd.DataFrame(comments,columns=['postid','title','comments'])
