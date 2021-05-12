@@ -25,16 +25,16 @@ comments = []
 
 for currentsub in subreddits:
     for post in reddit.subreddit(currentsub).hot(limit=2):
-        posts.append([post.title, post.score, post.id, post.subreddit, post.url, post.num_comments, post.selftext, post.created])
+        posts.append([post.id, post.title, post.score, post.subreddit, post.url, post.num_comments, post.selftext, post.created])
         postids.append(post.id)
 
-posts = pd.DataFrame(posts,columns=['title', 'score', 'id', 'subreddit', 'url', 'num_comments', 'body', 'created'])
+posts = pd.DataFrame(posts,columns=['id', 'title', 'score', 'subreddit', 'url', 'num_comments', 'body', 'created'])
 
 for id in postids:
     submission = reddit.submission(id)
     submission.comments.replace_more(limit=5)
 
     for comment in submission.comments.list():
-        comments.append([id, submission.title, comment.body])
+        comments.append([comment.id, comment.parent_id, id, submission.title, comment.body])
 
-comments = pd.DataFrame(comments,columns=['postid','title','comments'])
+comments = pd.DataFrame(comments,columns=['post_id', 'parent_id', 'id', 'title', 'comment'])
