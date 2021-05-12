@@ -24,7 +24,7 @@ postids = []
 comments = []
 
 for currentsub in subreddits:
-    for post in reddit.subreddit(currentsub).hot(limit=10):
+    for post in reddit.subreddit(currentsub).hot(limit=2):
         posts.append([post.title, post.score, post.id, post.subreddit, post.url, post.num_comments, post.selftext, post.created])
         postids.append(post.id)
 
@@ -32,11 +32,9 @@ posts = pd.DataFrame(posts,columns=['title', 'score', 'id', 'subreddit', 'url', 
 
 for id in postids:
     submission = reddit.submission(id)
+    submission.comments.replace_more(limit=5)
 
-    # No replies yet, just comments
-    for comment in submission.comments:
-        if isinstance(comment, MoreComments):
-            continue
+    for comment in submission.comments.list():
         comments.append([id, submission.title, comment.body])
 
 comments = pd.DataFrame(comments,columns=['postid','title','comments'])
