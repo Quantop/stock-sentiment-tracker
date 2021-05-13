@@ -29,6 +29,7 @@ for currentsub in subreddits:
         postids.append(post.id)
 
 posts = pd.DataFrame(posts,columns=['id', 'title', 'score', 'subreddit', 'url', 'num_comments', 'body', 'created'])
+posts.to_csv('datasets/posts.csv', index=True)
 
 for id in postids:
     submission = reddit.submission(id)
@@ -38,3 +39,4 @@ for id in postids:
         comments.append([comment.id, comment.parent_id, id, submission.title, comment.body])
 
 comments = pd.DataFrame(comments,columns=['post_id', 'parent_id', 'id', 'title', 'comment'])
+comments.to_csv('datasets/comments.csv', index=True)
