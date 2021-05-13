@@ -23,8 +23,8 @@ posts = []
 postids = []
 comments = []
 
-posts_per_sub = parser.get('options', 'posts_per_sub')
-morecomments_limit = parser.get('options', 'morecomments_limit')
+posts_per_sub = parser.getint('options', 'posts_per_sub')
+morecomments_limit = parser.getint('options', 'morecomments_limit')
 
 for currentsub in subreddits:
     for post in reddit.subreddit(currentsub).hot(limit=posts_per_sub):
