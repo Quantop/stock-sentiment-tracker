@@ -16,6 +16,20 @@ def verify_tickers(tickers_list, ticker_data):
 
     return verified
 
+def process_sentiment(sentiment_datatable):
+    general_sentiment = 0.0
+    #reddit_sentiment = 0.0 Add this later once twitter and news sentiment is taken
+    #ticker_sentiment = []
+
+    row_count = 0
+
+    for row in sentiment_datatable['sentiment score']:
+        if row != 0:
+            row_count += 1
+            general_sentiment += row
+
+    return general_sentiment/row_count
+
 
 reddit_data = pd.read_csv('datasets/comments.csv', usecols=["comment"])
 comments = reddit_data.comment.tolist()
@@ -45,3 +59,5 @@ reddit_data['sentiment score'] = scores
 reddit_data['tickers'] = verified_tickers
 
 reddit_data.to_csv('datasets/simple_analysis.csv', index=True)
+
+general_sentiment = process_sentiment(reddit_data)
