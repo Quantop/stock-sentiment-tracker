@@ -2,6 +2,8 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import pandas as pd
 import reticker
 
+# using 'reticker' to verify that a suspected ticker in a string is a valid ticker
+# ensures that sentiment is only conducted on tickers that exist
 def verify_tickers(tickers_list, ticker_data):
     verified = []
     ticker_data_set = set(ticker_data)
@@ -16,6 +18,7 @@ def verify_tickers(tickers_list, ticker_data):
 
     return verified
 
+# compiles the positive sentiment percentage together to be used on visuals
 def process_sentiment(sentiment_datatable):
     general_sentiment = 0.0
     #reddit_sentiment = 0.0 Add this later once twitter and news sentiment is taken
@@ -39,6 +42,7 @@ ticker_data = ticker_data.tickers.tolist()
 analyzer = SentimentIntensityAnalyzer()
 ticker_extractor = reticker.TickerExtractor()
 
+# calculates the sentiment on each comment made on reddit
 scores = []
 tickers = []
 for comment in comments:
@@ -58,6 +62,7 @@ verified_tickers = verify_tickers(tickers, ticker_data)
 reddit_data['sentiment score'] = scores
 reddit_data['tickers'] = verified_tickers
 
+# outputs the sentiment results to a datasheet
 reddit_data.to_csv('datasets/simple_analysis.csv', index=True)
 
 general_sentiment = process_sentiment(reddit_data)
