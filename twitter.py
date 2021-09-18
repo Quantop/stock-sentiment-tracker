@@ -2,6 +2,7 @@ import tweepy
 import configparser
 import pandas as pd
 
+# parsing the config file for twitter api information
 parser = configparser.RawConfigParser()
 parserfilepath = r'config.ini'
 parser.read(parserfilepath)
@@ -26,8 +27,13 @@ except:
 tickers_list = pd.read_csv('tickers.csv', usecols=["tickers"])
 tickers_list = tickers_list.tickers.tolist()
 
+tweets = []
+
 for ticker in tickers_list:
-    tweets = api.search(q=ticker)
+    search_tweets = api.search(q=ticker, count=10)
     
-    for x in tweets:
-        print(x.text)
+    for x in search_tweets:
+        tweets.append([x.id, x.favorite_count, x.retweet_count, x.text])
+
+tweets = pd.DataFrame(tweets,columns=['id', 'favorite_count', 'retweet_count', 'text'])
+tweets.to_csv('datasets/tweets.csv', index=True)
