@@ -64,9 +64,10 @@ reddit_data['tickers'] = verified_tickers
 
 # calculates the sentiment on each comment made on reddit
 twitter_data = pd.read_csv('datasets/tweets.csv', usecols=["text"])
-tweets = twitter_data.comment.tolist()
+tweets = twitter_data.text.tolist()
 
 twitter_scores = []
+twitter_tickers = []
 for tweet in tweets:
     sentiment_score = 0
     try:
@@ -77,7 +78,12 @@ for tweet in tweets:
     extracted_tickers = ticker_extractor.extract(tweet)
 
     twitter_scores.append(sentiment_score)
-    tickers.append(extracted_tickers)
+    twitter_tickers.append(extracted_tickers)
+
+verified_tickers = verify_tickers(twitter_tickers, ticker_data)
+
+twitter_data['sentiment score'] = twitter_scores
+twitter_data['tickers'] = verified_tickers
 
 # outputs the sentiment results to a datasheet
 reddit_data.to_csv('datasets/simple_analysis_reddit.csv', index=True)
