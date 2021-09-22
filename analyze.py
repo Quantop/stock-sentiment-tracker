@@ -19,19 +19,27 @@ def verify_tickers(tickers_list, ticker_data):
     return verified
 
 # compiles the positive sentiment percentage together to be used on visuals
-def process_sentiment(sentiment_datatable):
+# output order is [general sentiment, reddit sentiment, twitter sentiment]
+def process_sentiment(reddit, twitter):
     general_sentiment = 0.0
-    #reddit_sentiment = 0.0 Add this later once twitter and news sentiment is taken
+    reddit_sentiment = 0.0
+    twitter_sentiment = 0.0
     #ticker_sentiment = []
 
-    row_count = 0
+    reddit_row_count = 0
+    twitter_row_count = 0
 
-    for row in sentiment_datatable['sentiment score']:
+    for row in reddit['sentiment score']:
         if row != 0:
-            row_count += 1
-            general_sentiment += row
+            reddit_row_count += 1
+            reddit_sentiment += row
 
-    return general_sentiment/row_count
+    for row in twitter['sentiment score']:
+        if row != 0:
+            twitter_row_count += 1
+            twitter_sentiment += row
+
+    return [(reddit_sentiment+twitter_sentiment)/(reddit_row_count+twitter_row_count)/2, reddit_sentiment/reddit_row_count, twitter_sentiment/twitter_row_count]
 
 analyzer = SentimentIntensityAnalyzer()
 ticker_extractor = reticker.TickerExtractor()
@@ -89,4 +97,5 @@ twitter_data['tickers'] = verified_tickers
 reddit_data.to_csv('datasets/simple_analysis_reddit.csv', index=True)
 twitter_data.to_csv('datasets/simple_analysis_twitter.csv', index=True)
 
-general_sentiment = process_sentiment(reddit_data)
+general_sentiment = process_sentiment(reddit_data, twitter_data)
+print(general_sentiment)
