@@ -9,7 +9,6 @@
             <tr>
               <th scope="col">Company</th>
               <th scope="col">Price</th>
-              <th></th>
             </tr>
           </thead>
           <tbody>

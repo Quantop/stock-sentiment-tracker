@@ -18,6 +18,34 @@ CORS(app, resources={r'/*': {'origins': '*'}})
 def ping_pong():
     return jsonify('pong!')
 
+# basic example stock data route
+@app.route('/stocks', methods=['GET'])
+def stocks():
+    stocks_list = [
+        {
+            'name': 'AMZN',
+            'price': '100',
+        },
+        {
+            'name': 'APPL',
+            'price': '250',
+        },
+        {
+            'name': 'SHOP',
+            'price': '200',
+        },
+        {
+            'name': 'MSFT',
+            'price': '75',
+        }
+    ]
+    return jsonify(
+        {
+            'status': 'success',
+            'stocks': stocks_list
+        }
+    )
+
 
 if __name__ == '__main__':
     app.run()
