@@ -2,3 +2,4 @@ datasets/*
 env
 config.ini
 __pycache__/.
+.env
