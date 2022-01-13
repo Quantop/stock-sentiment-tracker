@@ -30,7 +30,7 @@
             <template #title>
               Tab {{ i }}
               <b-tab-item @click="closeTab(i)">
-                <b-icon icon="x-circle-fill" aria-hidden="true"></b-icon>
+                <b-icon icon="x-circle-fill" font-scale="0.75" aria-hidden="true"></b-icon>
               </b-tab-item>
             </template>
             Tab contents {{ i }}
