@@ -23,8 +23,8 @@
       </div>
     </div>
 
-    <div id="dynamic-navbar">
-      <b-tabs class="tabs" v-model="tabIndex" nav-class="scrollable-tabs-nav" card>
+    <div id="dynamic-tabs" hidden>
+      <b-tabs v-model="tabIndex" class="scrollable-tabs" card>
           <b-tab class="test" v-for="i in tabs" :key="'dyn-tab-' + i">
           <template #title>
             Tab {{ i }}
@@ -32,7 +32,10 @@
               <b-icon icon="x-circle-fill" font-scale="0.75" aria-hidden="true"></b-icon>
             </b-tab-item>
           </template>
-          Content
+          ContentContentContentContentContentContentContentContentCo
+          ntentContentContentContentContentContentContentContentCo
+          ntentContentContentContentContentContentCon
+          tentContentContentContentContentContentContentContentContentContentContent
           </b-tab>
 
           <!-- New Tab Button (Using tabs-end slot) -->
@@ -49,6 +52,55 @@
             <b-icon icon="chevron-right" font-scale="0.75"></b-icon>
           </b-button>
         </b-button-group>
+    </div>
+
+    <div id="dynamic-navbar">
+      <b-row cols="3">
+        <b-col class="left-scroll" cols="1">
+          <b-button squared class="nav-button" @click="scroll_left">
+            <b-icon icon="chevron-left" font-scale="0.75"></b-icon>
+          </b-button>
+        </b-col>
+
+        <b-col class="navbar-col">
+          <b-navbar type="dark">
+            <b-navbar-nav>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 2</b-navbar-item>
+              <b-navbar-item href="#">Test 1</b-navbar-item>
+            </b-navbar-nav>
+          </b-navbar>
+        </b-col>
+
+        <b-col class="right-scroll" cols="1">
+          <b-button squared class="nav-button" @click="scroll_right">
+            <b-icon icon="chevron-right" font-scale="0.75"></b-icon>
+          </b-button>
+        </b-col>
+      </b-row>
     </div>
   </div>
 </template>
@@ -89,14 +141,13 @@ export default {
     newTab() {
       this.tabs.push(this.tabCounter += 1);
     },
-    // currently scrolling does not work
     scroll_left() {
-      const content = document.querySelector('.nav-tabs');
-      content.scrollLeft -= 50;
+      const content = document.querySelector('.navbar');
+      content.scrollLeft -= 200;
     },
     scroll_right() {
-      const content = document.querySelector('.nav-tabs');
-      content.scrollLeft += 50;
+      const content = document.querySelector('.navbar');
+      content.scrollLeft += 200;
     },
   },
   created() {
@@ -106,24 +157,49 @@ export default {
 </script>
 
 <style>
-#dynamic-navbar {
-  margin-top: 60px;
-}
 
-.b-icon {
-  margin-left: 2px;
-  margin-bottom: 2px;
-}
-
-.scrollable-tabs-nav {
-  height:80px;
+.navbar {
+  color: black;
+  background-color: grey;
+  display: inline-flex;
   overflow: hidden;
-  overflow-x: scroll;
+  overflow-x: auto;
   white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.scrollable-tabs-nav tab {
-  color:hotpink;
+.left-scroll {
+  background-color: green;
+  text-align: right;
+}
+
+.right-scroll {
+  background-color: blue;
+  text-align: left;
+}
+
+.right-scroll button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.left-scroll button {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-col.col {
+  background-color: red;
+  max-width: 100%;
+  padding: 0px;
+  flex-grow: 1;
+}
+
+#dynamic-tabs {
+  margin-top: 60px;
 }
 
 </style>
