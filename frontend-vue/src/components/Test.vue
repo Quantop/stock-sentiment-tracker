@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <tr v-for="(stock, index) in stocks" :key="index">
-                <td>{{ stock.name }}</td>
+                <td>{{ stock.text }}</td>
                 <td>{{ stock.price }}</td>
                 </tr>
             </tbody>
@@ -54,7 +54,7 @@
         </b-button-group>
     </div>
 
-    <div id="dynamic-navbar">
+    <div id="dynamic-navbar" hidden>
       <b-row class="justify-content-sm-center g-0">
         <b-col class="bg-primary col-sm-1">
           <b-button squared class="flex h-100 w-100" @click="scroll_left">
@@ -102,6 +102,16 @@
         </b-col>
       </b-row>
     </div>
+
+    <div class="overflow-auto">
+      <!-- Use text in props -->
+      <b-pagination-nav use-router
+      hide-goto-end-buttons
+      :pages="stocks"
+      :number-of-pages="stocks.length"
+      align="fill"
+      ></b-pagination-nav>
+    </div>
   </div>
 </template>
 
@@ -115,6 +125,9 @@ export default {
       tabs: [],
       tabCounter: 0,
       tabIndex: 0,
+      rows: 100,
+      perPage: 10,
+      currentPage: 1,
     };
   },
 
