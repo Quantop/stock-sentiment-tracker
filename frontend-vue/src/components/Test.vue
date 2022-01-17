@@ -55,14 +55,14 @@
     </div>
 
     <div id="dynamic-navbar">
-      <b-row cols="3">
-        <b-col class="left-scroll" cols="1">
-          <b-button squared class="nav-button" @click="scroll_left">
+      <b-row class="justify-content-sm-center g-0">
+        <b-col class="bg-primary col-sm-1">
+          <b-button squared class="flex h-100 w-100" @click="scroll_left">
             <b-icon icon="chevron-left" font-scale="0.75"></b-icon>
           </b-button>
         </b-col>
 
-        <b-col class="navbar-col">
+        <b-col class="col-sm-10">
           <b-navbar type="dark">
             <b-navbar-nav>
               <b-navbar-item href="#">Test 1</b-navbar-item>
@@ -95,8 +95,8 @@
           </b-navbar>
         </b-col>
 
-        <b-col class="right-scroll" cols="1">
-          <b-button squared class="nav-button" @click="scroll_right">
+        <b-col class="bg-primary col-sm-1">
+          <b-button squared class="flex h-100 w-100" @click="scroll_right">
             <b-icon icon="chevron-right" font-scale="0.75"></b-icon>
           </b-button>
         </b-col>
@@ -177,18 +177,6 @@ export default {
 .right-scroll {
   background-color: blue;
   text-align: left;
-}
-
-.right-scroll button {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.left-scroll button {
-  height: 100%;
-  display: flex;
-  align-items: center;
 }
 
 .navbar-col.col {
