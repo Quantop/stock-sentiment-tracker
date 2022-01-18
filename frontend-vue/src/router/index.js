@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Ping from '../components/Ping.vue';
 import Test from '../components/Test.vue';
+import StockSentiment from '../components/StockSentiment.vue';
 
 Vue.use(Router);
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/test',
       name: 'Testing',
       component: Test,
+    },
+    {
+      path: '/sentiment',
+      name: 'Stock Sentiment',
+      component: StockSentiment,
     },
   ],
 });
