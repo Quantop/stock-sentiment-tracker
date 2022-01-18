@@ -20,13 +20,15 @@
                      </b-progress>
                   </div>
 
-                  <div>
-                     7-Day Change
-                  </div>
+                  <b-row>
+                     <b-col>
+                        7-Day Change
+                     </b-col>
 
-                  <div>
-                     30-Day Change
-                  </div>
+                     <b-col>
+                        30-Day Change
+                     </b-col>
+                  </b-row>
                </b-card>
             </b-col>
         </b-row>
@@ -50,13 +52,15 @@
                   </b-progress>
                </div>
 
-               <div>
-                  7-Day Change
-               </div>
+               <b-row>
+                  <b-col>
+                     7-Day Change
+                  </b-col>
 
-               <div>
-                  30-Day Change
-               </div>
+                  <b-col>
+                     30-Day Change
+                  </b-col>
+               </b-row>
             </b-card>
          </b-col>
 
@@ -78,13 +82,15 @@
                   </b-progress>
                </div>
 
-               <div>
-                  7-Day Change
-               </div>
+               <b-row>
+                  <b-col>
+                     7-Day Change
+                  </b-col>
 
-               <div>
-                  30-Day Change
-               </div>
+                  <b-col>
+                     30-Day Change
+                  </b-col>
+               </b-row>
             </b-card>
          </b-col>
 
@@ -106,13 +112,15 @@
                   </b-progress>
                </div>
 
-               <div>
-                  7-Day Change
-               </div>
+               <b-row>
+                  <b-col>
+                     7-Day Change
+                  </b-col>
 
-               <div>
-                  30-Day Change
-               </div>
+                  <b-col>
+                     30-Day Change
+                  </b-col>
+               </b-row>
             </b-card>
          </b-col>
         </b-row>
