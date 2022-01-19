@@ -165,6 +165,36 @@
          </b-col>
         </b-row>
      </b-container>
+
+     <b-container>
+        <b-row class="mt-5">
+           <b-col class="mt-1">
+            <h4>Top Gainers</h4>
+            <b-table
+               striped
+               hover
+               :items="stocks"
+               :fields="gainfields"
+               label-sort-asc=''
+               label-sort-desc=''
+               label-sort-clear=''
+            ></b-table>
+           </b-col>
+
+           <b-col class="mt-1">
+            <h4>Top Losers</h4>
+            <b-table
+               striped
+               hover
+               :items="stocks"
+               :fields="gainfields"
+               label-sort-asc=''
+               label-sort-desc=''
+               label-sort-clear=''
+            ></b-table>
+           </b-col>
+        </b-row>
+     </b-container>
   </div>
 </template>
 
@@ -179,6 +209,20 @@ export default {
       twittersentiment: 66,
       redditsentiment: 72,
       mediasentiment: 41,
+      gainfields: [
+        {
+          key: 'company',
+          sortable: false,
+        },
+        {
+          key: 'price',
+          sortable: true,
+        },
+        {
+          key: 'sentiment',
+          sortable: true,
+        },
+      ],
     };
   },
 

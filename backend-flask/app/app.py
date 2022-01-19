@@ -23,24 +23,29 @@ def ping_pong():
 def stocks():
     stocks_list = [
         {
-            'text': 'AMZN',
+            'company': 'AMZN',
             'price': '100',
+            'sentiment': '57',
         },
         {
-            'text': 'APPL',
+            'company': 'APPL',
             'price': '250',
+            'sentiment': '33',
         },
         {
-            'text': 'SHOP',
+            'company': 'SHOP',
             'price': '200',
+            'sentiment': '19',
         },
         {
-            'text': 'MSFT',
+            'company': 'MSFT',
             'price': '75',
+            'sentiment': '95',
         },
         {
-            'text': 'TSLA',
+            'company': 'TSLA',
             'price': '750',
+            'sentiment': '88',
         }
     ]
     return jsonify(
