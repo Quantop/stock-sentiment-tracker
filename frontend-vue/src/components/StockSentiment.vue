@@ -27,14 +27,14 @@
                   <b-row>
                      <b-col h-align="center">
                         7-Day Change
-                        <b-col>
+                        <b-col class="pt-2">
                            <h6>+7%</h6>
                         </b-col>
                      </b-col>
 
                      <b-col h-align="center">
                         30-Day Change
-                        <b-col>
+                        <b-col class="pt-2">
                            <h6>+27%</h6>
                         </b-col>
                      </b-col>
@@ -62,21 +62,21 @@
                   </b-progress>
 
                   <div class="m-4">
-                     <h2>73%</h2>
+                     <h3>73%</h3>
                   </div>
                </div>
 
                <b-row>
                   <b-col h-align="center">
                      7-Day Change
-                     <b-col>
+                     <b-col class="pt-2">
                         <h6>-5%</h6>
                      </b-col>
                   </b-col>
 
                   <b-col h-align="center">
                      30-Day Change
-                     <b-col>
+                     <b-col class="pt-2">
                         <h6>+14%</h6>
                      </b-col>
                   </b-col>
@@ -109,14 +109,14 @@
                <b-row>
                   <b-col h-align="center">
                      7-Day Change
-                     <b-col>
+                     <b-col class="pt-2">
                         <h6>+4%</h6>
                      </b-col>
                   </b-col>
 
                   <b-col h-align="center">
                      30-Day Change
-                     <b-col>
+                     <b-col class="pt-2">
                         <h6>-3%</h6>
                      </b-col>
                   </b-col>
@@ -149,14 +149,14 @@
                <b-row>
                   <b-col h-align="center">
                      7-Day Change
-                     <b-col>
+                     <b-col class="pt-2">
                         <h6>+8%</h6>
                      </b-col>
                   </b-col>
 
                   <b-col h-align="center">
                      30-Day Change
-                     <b-col>
+                     <b-col class="pt-2">
                         <h6>+31%</h6>
                      </b-col>
                   </b-col>
