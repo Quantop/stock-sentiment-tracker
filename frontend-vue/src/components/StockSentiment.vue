@@ -1,8 +1,8 @@
 <template>
   <div class="container">
      <b-container>
-        <b-row align-h="center">
-            <b-col cols="6">
+        <b-row align-h="center" cols="1" cols-sm="2">
+            <b-col>
                <b-card
                   border-variant="primary"
                   header="Overall Market Sentiment"
@@ -43,8 +43,8 @@
             </b-col>
         </b-row>
 
-        <b-row align-h="center" class="mt-5">
-         <b-col>
+        <b-row align-h="center" cols="1" cols-sm="3" class="mt-5">
+         <b-col class="mt-2">
             <b-card
                border-variant="primary"
                header="Twitter Sentiment"
@@ -84,7 +84,7 @@
             </b-card>
          </b-col>
 
-         <b-col>
+         <b-col class="mt-2">
             <b-card
                border-variant="primary"
                header="Reddit Sentiment"
@@ -124,7 +124,7 @@
             </b-card>
          </b-col>
 
-         <b-col>
+         <b-col class="mt-2 mb-2">
             <b-card
                border-variant="primary"
                header="Media Sentiment"
