@@ -131,7 +131,7 @@
                header-bg-variant="primary"
                header-text-variant="white"
             >
-               Media Sentiment
+               Today's Sentiment
                <div align="center">
                   <b-progress :max="100" height="20px" class="w-75" hidden>
                      <b-progress-bar
