@@ -46,6 +46,31 @@ def stocks():
             'company': 'TSLA',
             'price': '750',
             'sentiment': '88',
+        },
+        {
+            'company': 'GOOG',
+            'price': '900',
+            'sentiment': '72',
+        },
+        {
+            'company': 'AMD',
+            'price': '32',
+            'sentiment': '99',
+        },
+        {
+            'company': 'GME',
+            'price': '122',
+            'sentiment': '21',
+        },
+        {
+            'company': 'NVDA',
+            'price': '116',
+            'sentiment': '80',
+        },
+        {
+            'company': 'DIS',
+            'price': '420',
+            'sentiment': '51',
         }
     ]
     return jsonify(
