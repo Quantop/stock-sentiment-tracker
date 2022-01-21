@@ -4,9 +4,9 @@
         <b-row align-h="center" cols="1" cols-sm="2">
             <b-col>
                <b-card
-                  border-variant="primary"
+                  border-variant="dark"
                   header="Overall Market Sentiment"
-                  header-bg-variant="primary"
+                  header-bg-variant="dark"
                   header-text-variant="white"
                >
                   Today's Sentiment
@@ -46,9 +46,9 @@
         <b-row align-h="center" cols="1" cols-sm="3" class="mt-5">
          <b-col class="mt-2">
             <b-card
-               border-variant="primary"
+               border-variant="dark"
                header="Twitter Sentiment"
-               header-bg-variant="primary"
+               header-bg-variant="dark"
                header-text-variant="white"
             >
                <div align="center">
@@ -86,9 +86,9 @@
 
          <b-col class="mt-2">
             <b-card
-               border-variant="primary"
+               border-variant="dark"
                header="Reddit Sentiment"
-               header-bg-variant="primary"
+               header-bg-variant="dark"
                header-text-variant="white"
             >
                Today's Sentiment
@@ -126,9 +126,9 @@
 
          <b-col class="mt-2 mb-2">
             <b-card
-               border-variant="primary"
+               border-variant="dark"
                header="Media Sentiment"
-               header-bg-variant="primary"
+               header-bg-variant="dark"
                header-text-variant="white"
             >
                Today's Sentiment
