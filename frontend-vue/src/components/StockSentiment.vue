@@ -219,7 +219,17 @@ export default {
           sortable: true,
         },
         {
-          key: 'sentiment',
+          key: 'current_sentiment',
+          sortable: true,
+        },
+        {
+          key: '7_day_change',
+          label: '7-Day Change',
+          sortable: true,
+        },
+        {
+          key: '30_day_change',
+          label: '30-Day Change',
           sortable: true,
         },
       ],

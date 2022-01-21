@@ -25,52 +25,52 @@ def stocks():
         {
             'company': 'AMZN',
             'price': '100',
-            'sentiment': '57',
+            'current_sentiment': '57',
         },
         {
             'company': 'APPL',
             'price': '250',
-            'sentiment': '33',
+            'current_sentiment': '33',
         },
         {
             'company': 'SHOP',
             'price': '200',
-            'sentiment': '19',
+            'current_sentiment': '19',
         },
         {
             'company': 'MSFT',
             'price': '75',
-            'sentiment': '95',
+            'current_sentiment': '95',
         },
         {
             'company': 'TSLA',
             'price': '750',
-            'sentiment': '88',
+            'current_sentiment': '88',
         },
         {
             'company': 'GOOG',
             'price': '900',
-            'sentiment': '72',
+            'current_sentiment': '72',
         },
         {
             'company': 'AMD',
             'price': '32',
-            'sentiment': '99',
+            'current_sentiment': '99',
         },
         {
             'company': 'GME',
             'price': '122',
-            'sentiment': '21',
+            'current_sentiment': '21',
         },
         {
             'company': 'NVDA',
             'price': '116',
-            'sentiment': '80',
+            'current_sentiment': '80',
         },
         {
             'company': 'DIS',
             'price': '420',
-            'sentiment': '51',
+            'current_sentiment': '51',
         }
     ]
     return jsonify(
