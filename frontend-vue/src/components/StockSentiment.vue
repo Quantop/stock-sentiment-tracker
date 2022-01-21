@@ -9,6 +9,23 @@
                   header-bg-variant="dark"
                   header-text-variant="white"
                >
+                  <template #header>
+                     <div class="card-header">
+                        <div>
+                        <b-icon
+                        id="overall-tt"
+                        icon="info-circle-fill"
+                        class="pull-right mt-2"
+                        scale="1"
+                        >
+                        </b-icon>
+                        </div>
+                        <b-tooltip target="overall-tt" triggers="hover">
+                           Tooltip for overmarket market sentiment card
+                        </b-tooltip>
+                        <h5 class="text-center mt-1">Overall Market Sentiment</h5>
+                     </div>
+                  </template>
                   Today's Sentiment
                   <div align="center">
                      <b-progress :max="100" height="20px" class="w-75" hidden>
@@ -256,4 +273,5 @@ export default {
 </script>
 
 <style>
+.card-header .pull-right {position: absolute; right: 15px;}
 </style>
