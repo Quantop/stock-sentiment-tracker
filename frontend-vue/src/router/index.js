@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import StockSentiment from '@/views/StockSentiment.vue';
 import Ping from '../components/Ping.vue';
 import Test from '../components/Test.vue';
-import StockSentiment from '../components/StockSentiment.vue';
 
 Vue.use(Router);
 
@@ -27,7 +27,7 @@ export default new Router({
     },
     {
       path: '/sentiment',
-      name: 'Stock Sentiment',
+      name: 'Sentiment',
       component: StockSentiment,
     },
   ],
